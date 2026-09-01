@@ -9,7 +9,7 @@ WORKDIR /usr/src/atsea
 COPY pom.xml .
 RUN mvn -B -f pom.xml -s /usr/share/maven/ref/settings-docker.xml dependency:resolve
 COPY . .
-RUN mvn -B -s /usr/share/maven/ref/settings-docker.xml package -DskipTests
+RUN mvn -B -s /usr/share/maven/ref/settings-docker.xml package -DskipTests=true
 
 FROM registry.access.redhat.com/ubi8/openjdk-8:latest
 RUN adduser -Dh /home/gordon gordon
