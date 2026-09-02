@@ -4,12 +4,7 @@ COPY react-app .
 RUN npm install
 RUN npm run build
 
-FROM maven:latest AS appserver
-WORKDIR /usr/src/atsea
-COPY pom.xml .
-RUN mvn -B -f pom.xml dependency:resolve
-COPY . .
-RUN mvn -B package -DskipTests=true
+
 
 FROM registry.access.redhat.com/ubi8/openjdk-8:latest
 RUN adduser -Dh /home/gordon gordon
