@@ -7,6 +7,8 @@ RUN npm run build
 
 
 FROM registry.access.redhat.com/ubi8/openjdk-8:latest
+RUN useradd -u 1000 -m gordon
+USER gordon
 WORKDIR /static
 COPY --from=storefront /usr/src/atsea/app/react-app/build/ .
 WORKDIR /app
