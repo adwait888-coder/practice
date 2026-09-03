@@ -7,6 +7,7 @@ RUN npm run build
 
 
 FROM registry.access.redhat.com/ubi8/openjdk-8:latest
+USER root
 RUN useradd -u 1000 -m gordon
 USER gordon
 WORKDIR /static
