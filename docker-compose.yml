@@ -4,6 +4,8 @@ services:
   reverse_proxy:
     build: ./reverse_proxy
     user: nginx
+    depends_on:
+      - appserver
 
   database:
     build: 
@@ -35,6 +37,8 @@ services:
       - back-tier
     secrets:
       - postgres_password
+    depends_on:
+      - database
 
   payment_gateway:
     build:
