@@ -8,9 +8,9 @@ services:
       - "443:443"
     secrets:
       - source: pogo_revprox_cert
-        target: pogo_revprox_cert
+        target: revprox_cert
       - source: pogo_revprox_key
-        target: pogo_revprox_key
+        target: revprox_key
     networks:
       - front-tier
 
