@@ -31,7 +31,7 @@ public class Product implements Serializable {
     private String description;
         
     @NotEmpty
-    @Column(name = "image", length = Integer.MAX_VALUE, nullable = true)
+    @Column(name = "image", length = 1000, nullable = true)
     private String image; 
           
 	public Product() {
