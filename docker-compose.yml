@@ -7,16 +7,16 @@ services:
     depends_on:
       - appserver
 
- database:
-  # build:
-  #   context: ./database
-  image: postgres:10
-  user: postgres
-  environment:
-    POSTGRES_USER: gordonuser
-    POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
-    POSTGRES_DB: atsea
-    POSTGRES_HOST_AUTH_METHOD: md5   
+  database:
+    # build:
+    #   context: ./database
+    image: postgres:10
+    user: postgres
+    environment:
+      POSTGRES_USER: gordonuser
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+      POSTGRES_DB: atsea
+      POSTGRES_HOST_AUTH_METHOD: md5   
     ports:
       - "5432:5432" 
     networks:
@@ -26,8 +26,8 @@ services:
 
   appserver:
     build:
-       context: app
-       dockerfile: Dockerfile
+      context: app
+      dockerfile: Dockerfile
     image: atsea_app
     user: gordon
     ports:
