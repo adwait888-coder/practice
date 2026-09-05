@@ -6,6 +6,9 @@ services:
     user: nginx
     depends_on:
       - appserver
+    secrets:
+      - revprox_cert
+      - revprox_key
 
   database:
     # build:
@@ -60,3 +63,8 @@ secrets:
     file: ./devsecrets/postgres_password
   payment_token:
     file: ./devsecrets/payment_token
+
+  revprox_cert:
+    file: ./secrets/revprox_cert
+  revprox_key:
+    file: ./secrets/revprox_key
