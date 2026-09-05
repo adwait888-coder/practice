@@ -27,7 +27,7 @@ public class Product implements Serializable {
     @Column(name = "price", nullable = false)
     private double price;
     
-    @Column(name = "description", length=10485760, nullable = false)
+    @Column(name = "description", length=1000, nullable = false)
     private String description;
         
     @NotEmpty
