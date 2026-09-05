@@ -64,7 +64,7 @@ secrets:
   payment_token:
     file: ./devsecrets/payment_token
 
-  revprox_cert:
+  pogo_revprox_cert:
     file: ./secrets/pogo_revprox_cert
-  revprox_key:
+  pogo_revprox_key:
     file: ./secrets/pogo_revprox_key
