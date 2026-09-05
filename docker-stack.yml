@@ -7,10 +7,10 @@ services:
       - "80:80"
       - "443:443"
     secrets:
-      - source: revprox_cert
-        target: revprox_cert
-      - source: revprox_key
-        target: revprox_key
+      - source: pogo_revprox_cert
+        target: pogo_revprox_cert
+      - source: pogo_revprox_key
+        target: pogo_revprox_key
     networks:
       - front-tier
 
@@ -93,7 +93,7 @@ secrets:
     external: true
   staging_token:
     external: true
-  revprox_key:
+  pogo_revprox_key:
     external: true
-  revprox_cert:
+  pogo_revprox_cert:
     external: true
